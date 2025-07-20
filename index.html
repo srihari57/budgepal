@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BudgePal - Home Dashboard</title>
+  <link rel="stylesheet" href="style().css" />
+</head>
+<body>
+  <!-- Splash Screen / Header -->
+  <header class="header">
+    <h1>BudgePal</h1>
+    <p>Track. Manage. Prosper.</p>
+  </header>
+
+  <!-- Home Dashboard -->
+  <main class="dashboard">
+    <section class="summary">
+      <h2>Monthly Summary</h2>
+      <p>Total Spent: ₹<span id="total-spent">0</span></p>
+      <p>Remaining Budget: ₹<span id="remaining-budget">0</span></p>
+    </section>
+
+    <section class="budget-meter">
+      <h3>Budget Usage</h3>
+      <progress id="budget-progress" value="0" max="100"></progress>
+    </section>
+
+    <section class="categories">
+      <h3>Top Categories</h3>
+      <ul>
+        <li>Food - ₹<span id="food">0</span></li>
+        <li>Travel - ₹<span id="travel">0</span></li>
+        <li>Rent - ₹<span id="rent">0</span></li>
+      </ul>
+    </section>
+
+    <!-- Add Transaction Button -->
+    <button id="addBtn">➕ Add Transaction</button>
+
+    <!-- Add Transaction Modal -->
+    <div id="transactionModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Add Transaction</h2>
+        <form id="transactionForm">
+          <label>Type:
+            <select id="type">
+              <option value="expense">Expense</option>
+              <option value="income">Income</option>
+            </select>
+          </label>
+          <label>Amount: <input type="number" id="amount" required /></label>
+          <label>Category:
+            <select id="category">
+              <option value="Food">Food</option>
+              <option value="Rent">Rent</option>
+              <option value="Travel">Travel</option>
+              <option value="Others">Others</option>
+            </select>
+          </label>
+          <label>Date: <input type="date" id="date" required /></label>
+          <label>Notes: <input type="text" id="notes" /></label>
+          <label>Payment Mode:
+            <select id="mode">
+              <option value="Cash">Cash</option>
+              <option value="UPI">UPI</option>
+              <option value="Card">Card</option>
+            </select>
+          </label>
+          <button type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
